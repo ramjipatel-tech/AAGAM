@@ -1,0 +1,868 @@
+SOFTWARE REQUIREMENTS SPECIFICATION
+AAGAM DIGITAL TECHNOLOGY
+Internship • Training • Placement • Recruitment • Student Portal • Document Verification
+Version 2.0 | Requirements Baseline | October 2026
+1. Document Control
+Field
+Details
+Project
+AAGAM Digital Technology Full Web & Management Platform
+Document
+Software Requirements Specification
+Version
+2.0
+Status
+Consolidated Requirements Baseline
+Primary Email
+AAGAMDigitaltech@gmail.com
+HR Email
+akashvermaofficialblogs@gmail.com
+CEO
+Ayush Raj
+HR
+Akash Verma
+HR Phone
+9693335499
+Company Contacts
+7667204026 / 9142363927 / 7091465676
+2. Purpose
+This SRS defines the complete functional, non-functional, security, workflow, data, document, payment and automation requirements for AAGAM Digital Technology. The platform is designed as a professional corporate website plus a centralized system for internship, training, placement, recruitment, project management, student services and official document verification.
+The system shall support a complete student lifecycle: discovery → application → email verification → registration number → administrative review → selection → Offer Letter → offer acceptance → payment where applicable → payment verification → portal provisioning → orientation → internship/training/project work → completion → LOR/Certificate → QR verification.
+3. Business Goals
+Provide AAGAM Digital Technology with a professional and responsive public website.
+Digitize internship, training, placement and recruitment operations.
+Reduce manual application and document-generation work.
+Provide a secure student self-service portal.
+Automate official document generation and email delivery.
+Provide trustworthy QR/ID-based document verification.
+Integrate Razorpay for applicable payments and maintain complete payment records.
+Provide staff and administrators with centralized management, reporting and audit trails.
+4. Scope
+4.1 Included
+Public corporate website
+Internship listings and applications
+Training/course listings and enrollment
+Placement and job openings
+Student registration and authentication
+Email OTP verification
+Password and OTP login
+Student dashboard
+Staff/HR dashboard
+Admin panel
+Course-wise application document requirements
+NOC and College ID uploads where configured
+Optional NOC OCR-assisted auto-fill
+Registration number generation
+Internship application status workflow
+Offer Letter generation
+Offer acceptance
+Razorpay payment workflow
+Payment verification and webhook processing
+Student and admin payment history
+Automatic portal account provisioning
+Project assignment/submission/review
+LOR generation
+Certificate generation
+Template/design management
+QR and public document verification
+Automated email and in-app notifications
+Blog/CMS
+Legal and policy pages
+Security, audit and reporting
+4.2 Initial Exclusions
+Native mobile apps unless separately commissioned
+Payroll/accounting system
+Uncontrolled third-party document-signing services
+Employment decisions made entirely by automation
+Any payment or fee not explicitly configured and disclosed by authorized administrators
+5. User Roles
+Role
+Core Access
+Public Visitor
+Browse website, opportunities, blogs, policies, contact and document verification.
+Student
+Register/login, apply, upload documents, track applications, accept offers, pay applicable fees, access portal, submit projects and receive documents.
+Staff/HR
+Review assigned applications/students, manage tasks/projects, communicate, review submissions and provide recommendations.
+Admin
+Manage students, staff, programs, applications, documents, payments, emails, templates, CMS, reports and settings.
+Super Admin
+Full system governance, role/permission management, security and critical configuration.
+6. Public Website
+6.1 Main Navigation
+Home
+About
+Internship
+Training
+Placement
+Job Openings
+Blog
+Verify
+Contact Us
+Register
+Login
+6.2 Home
+Professional technology/career-focused hero section.
+Calls to action for Internship, Training, Placement and Jobs.
+Company introduction.
+Program highlights.
+Why choose AAGAM section.
+Verified statistics only where supported by actual data.
+Latest blogs/announcements.
+Contact CTA.
+6.3 About
+Company overview
+Mission and vision
+Leadership
+Values
+Career/technology focus
+Contact information
+6.4 Internship
+Internship cards
+Technology/department
+Duration
+Eligibility
+Description
+Benefits
+Application deadline/status
+Apply Now
+6.5 Training
+Programs
+Syllabus
+Duration
+Mode
+Learning outcomes
+Course access
+Completion/certificate information
+6.6 Placement
+Placement assistance information.
+Placement drives and hiring announcements.
+Eligibility by course/qualification.
+Placement/job listings.
+Application CTA.
+Placement status where applicable.
+6.7 Job Openings
+Role
+Department
+Eligibility
+Skills
+Location/mode
+Deadline
+Apply
+6.8 Blog
+Categories
+Search
+Articles
+SEO metadata
+Admin publishing
+6.9 Contact
+Contact form
+Company phone numbers
+HR contact
+Official emails
+Enquiry management
+6.10 Legal
+Terms & Conditions
+Privacy Policy
+Refund & Cancellation
+Disclaimer
+Cookie Policy
+7. Registration & Authentication
+7.1 General Account Registration
+Student enters required identity, contact, academic and password details.
+Email OTP verification is mandatory before account activation.
+Duplicate email/account prevention.
+Welcome email after successful registration.
+Password reset through verified email.
+7.2 Login
+Email + password login.
+Email OTP one-time login.
+Secure logout.
+Session expiry and revocation.
+Rate limiting and anti-abuse controls.
+7.3 Application-Time Email OTP
+When a student submits an internship application, the system shall require a fresh email OTP verification for the registered/entered email address. A successful OTP confirms that the applicant controls the email before final submission.
+Short OTP validity
+Resend limits
+Attempt limits
+Server-side verification
+OTP audit events
+8. Student Profile & Auto-Fill
+A logged-in student's verified profile information shall automatically populate applicable application fields. The student may correct or complete missing information before final submission.
+Name
+Email
+Mobile
+College/Institute
+Course
+Year/Semester
+Academic details
+Skills
+Address where required
+The student must review and confirm the information before submission. Auto-filled information shall not prevent authorized corrections.
+9. Course-Wise Document Requirements
+Each internship, training, placement or job program shall have its own configurable document checklist.
+NOC may be mandatory for one program and optional/not required for another.
+College ID may be required for selected programs.
+Resume/CV and academic documents may be configured where required.
+Admin controls required/optional status.
+Only applicable documents appear in the student's application form.
+Private uploaded documents are accessible only to authorized users.
+10. NOC Upload & Optional OCR
+10.1 Upload
+Student uploads NOC in supported file formats.
+File size/type validation.
+Secure private storage.
+Preview/download for authorized reviewers.
+10.2 OCR-Assisted Auto-Fill
+If enabled for a program, the system may extract candidate details from the NOC to reduce manual typing. OCR output is advisory and must be confirmed by the student before final submission.
+Extract name/college/course fields where readable.
+Show extracted values for confirmation.
+Allow manual correction.
+Do not submit low-confidence OCR values without user confirmation.
+Store only necessary extracted data.
+11. Internship Application Workflow
+Student opens Internship section.
+Student selects an internship.
+Student clicks Apply Now.
+System authenticates the student or asks for required login.
+Existing profile details are auto-filled.
+Program-specific documents such as NOC and College ID are displayed.
+Student uploads required documents.
+Student completes missing/manual fields.
+System sends email OTP for application verification.
+Student enters correct OTP.
+Student reviews all information and submits.
+System creates the application record.
+System generates a unique Registration Number.
+Registration Number is displayed to the student.
+Application confirmation email is automatically sent.
+Application appears in Admin/HR panel.
+Admin/HR reviews the application.
+Application is selected, rejected, held or requires correction according to configured workflow.
+12. Registration Number
+Every successfully submitted internship application shall receive a unique Registration Number.
+Generated server-side.
+Collision-resistant and unique.
+Linked to the student and selected program.
+Shown after submission.
+Included in confirmation email.
+Visible in Student Dashboard.
+Visible to authorized Admin/HR.
+Example format: AAGAM-INT-2026-000001. The final format shall be configurable.
+13. Application Status
+Draft
+OTP Pending
+Submitted
+Under Review
+Documents Required
+Shortlisted
+Selected
+Rejected
+Offer Generated
+Offer Accepted
+Payment Pending
+Payment Verified
+Portal Provisioning
+Active
+Completed
+Cancelled
+14. Application Confirmation Email
+After successful application submission, the student shall receive an automated confirmation email containing the application acknowledgement and Registration Number.
+Internship name
+Registration Number
+Submission timestamp
+Current status
+Expected review timeline where configured
+Secure dashboard link
+15. Offer Letter Workflow
+Only authorized Admin users shall generate official Offer Letters.
+Admin opens the selected application.
+Admin reviews student/application/documents.
+Admin selects an approved Offer Letter template.
+System populates verified student and internship data.
+System generates a unique Offer Letter ID.
+System generates the PDF.
+System adds QR/verification information where configured.
+Admin confirms/generates the Offer Letter.
+Offer Letter is stored in the document system.
+Student receives an automated Offer Letter email.
+Student can view/download the Offer Letter from the dashboard.
+Offer Letter displays applicable Terms & Conditions and the acceptance requirement.
+The application confirmation/selection communication may state that selected candidates can receive an Offer Letter within a target review window of up to 48 hours. This is an operational SLA, not an unconditional guarantee of selection or issuance.
+16. Offer Letter Email
+Offer Letter generated notification.
+Offer Letter PDF or secure document link.
+Offer ID and Registration Number.
+Internship/program details.
+Start/end or applicable dates.
+Terms & Conditions.
+Offer validity/expiry if configured.
+Accept Offer Letter CTA.
+17. Offer Acceptance
+The student shall have an Accept Offer Letter action only for a valid, non-expired offer issued to that student's authenticated account.
+Acceptance page shows the correct student's offer data.
+Terms & Conditions must be displayed before acceptance.
+If a fee is configured for acceptance, the amount and purpose are clearly displayed.
+Student must confirm acceptance conditions.
+System creates a payment order tied to the exact application/offer.
+Student is redirected to Razorpay checkout.
+Offer acceptance is finalized only after successful server-side payment verification when payment is required.
+18. Razorpay Payment Integration
+18.1 Payment Creation
+Backend creates the payment order for the authenticated application.
+Amount is retrieved from server-side configuration.
+Student cannot modify the payable amount from the frontend.
+Payment order is tied to Registration Number/Offer ID.
+Razorpay checkout is opened for that specific order.
+18.2 Payment Verification
+Student initiates payment.
+Razorpay processes payment.
+Frontend may show the immediate result.
+Backend verifies the payment using Razorpay server-side mechanisms.
+Webhook/event is received and validated.
+Transaction is recorded with gateway identifiers.
+Payment is marked successful only after verified confirmation.
+Offer acceptance/payment state is updated.
+Student/admin notifications are triggered.
+Portal provisioning workflow starts.
+18.3 Security Rules
+Never trust a frontend-only success response.
+Validate Razorpay webhook signatures.
+Use idempotent payment event processing.
+Prevent duplicate order/payment application.
+Failed/pending/refunded payments must not activate paid access.
+Store gateway IDs and status history.
+Do not expose secret Razorpay credentials to frontend code.
+19. Payment History — Student Dashboard
+Every student shall have a Payment History section showing only payments associated with that student's account.
+Field
+Description
+Transaction/Payment ID
+Gateway transaction/reference identifier
+Registration No.
+Application registration number
+Offer ID
+Associated Offer Letter
+Payment For
+Offer acceptance / training / other configured purpose
+Amount
+Paid amount
+Date & Time
+Transaction timestamp
+Method
+UPI/card/net banking etc., when returned by gateway
+Status
+Success / Pending / Failed / Refunded
+Receipt
+View/download where available
+Payment detail view
+Secure receipt access
+No access to other students' payments
+20. Payment Management — Admin Panel
+Admin shall have a complete payment management module.
+Dashboard totals: successful, pending, failed and refunded payments.
+Total collection reporting where applicable.
+Search by student, Registration Number, Offer ID, transaction ID.
+Filter by date, program and payment status.
+Payment detail and timeline.
+Razorpay order ID and payment ID.
+Application and Offer Letter linkage.
+Export/reporting subject to permissions.
+Audit history.
+Admin shall not be able to fabricate a successful Razorpay payment by simply changing a status field. Successful payment state must originate from verified gateway processing or an explicitly controlled refund/reconciliation process.
+21. Offer Acceptance Success Workflow
+Razorpay payment is successfully verified.
+Payment record becomes Successful.
+Offer acceptance record becomes Accepted.
+Student receives Offer Accepted confirmation email.
+Admin Dashboard shows payment received and Offer Accepted.
+Portal provisioning task is created automatically.
+System activates/provisions the student account within the configured target SLA, with a target of up to 2 hours after verified payment.
+Student receives secure portal activation/login instructions.
+Student accesses the internship portal.
+The 2-hour value is an operational provisioning target. If provisioning is delayed, the system should show a pending status and alert authorized administrators.
+22. Portal Credentials & Security
+For security, the preferred method is a secure one-time account activation/password-set link. If the business requires a temporary password, it must be short-lived and changed on first login. Permanent plaintext passwords should not be emailed.
+Account provisioned only after applicable payment verification.
+Secure activation email.
+Password setup/reset.
+Role Student.
+Internship/course access linked to the correct application.
+Access revocation/suspension by authorized Admin.
+Audit account creation and activation.
+23. Student Dashboard
+Module
+Functions
+Overview
+Application, internship, training, projects, documents, payment and notifications.
+My Internship
+Offer, acceptance, dates, mentor, status, tasks and progress.
+My Training
+Enrolled courses, modules, resources and completion.
+My Projects
+Assigned projects, submissions, reviews and deadlines.
+Job Applications
+Placement/job applications and status.
+Documents
+Offer Letter, LOR, Certificate and verification.
+Payments
+Payment history and transaction details.
+Notifications
+System, class, project, application and document notifications.
+Profile
+Personal/academic information.
+24. Internship Portal / Active Internship
+Internship start status.
+Orientation details.
+Assigned mentor/staff.
+Tasks.
+Project assignments.
+Deadlines.
+Announcements.
+Project submission.
+Feedback and completion progress.
+25. Project Submission
+Project title and description.
+Guidelines.
+Assignment/start/deadline dates.
+GitHub repository URL.
+Live demo URL.
+Documentation upload.
+Source ZIP upload where allowed.
+Screenshots/evidence.
+Submission timestamp.
+Staff review and remarks.
+Revision requests.
+Approval/completion status.
+Workflow: Assigned → In Progress → Submitted → Under Review → Changes Required / Approved → Completed.
+26. Training/Course Management
+Create courses and modules.
+Program-specific access.
+Student enrollment.
+Resources.
+Assignments.
+Class schedules/notifications.
+Progress/completion tracking.
+Course completion criteria.
+Certificate eligibility.
+27. Placement & Job Management
+Placement drives.
+Job openings.
+Role and eligibility.
+Course/qualification filters.
+Resume/application collection.
+Application status pipeline.
+Interview scheduling/notes where enabled.
+Selection/rejection communication.
+Placement reporting.
+Suggested pipeline: Applied → Under Review → Shortlisted → Interview → Selected / Rejected.
+28. LOR Management
+Admin-controlled templates.
+Student/program/internship dynamic fields.
+Unique LOR ID.
+QR/verification URL.
+PDF generation.
+Student dashboard availability.
+Automated LOR email.
+Valid/Revoked/Cancelled status.
+29. Certificate Management
+Admin-controlled certificate templates.
+Logo, border, typography, background, signatures and seal/stamp area.
+Dynamic student/program/duration/date fields.
+Unique Certificate ID.
+QR code.
+PDF generation.
+Student download.
+Automated certificate completion email.
+Valid/Revoked/Cancelled status.
+30. Document Template Designer
+Admin shall be able to manage approved templates for Offer Letters, LORs and Certificates.
+Company branding.
+Header/footer.
+Fonts and layout.
+Background/border.
+Signature block.
+Stamp/seal area.
+Dynamic placeholders.
+QR placement.
+Document ID placement.
+Template versioning.
+Enable/disable template.
+Only authorized users may publish or use official templates.
+31. QR & Public Verification
+Each official document shall have a unique verification identifier and QR code. The QR must resolve to the official AAGAM verification endpoint and the server must check the current document record.
+Offer Letter verification.
+LOR verification.
+Certificate verification.
+Unique document ID.
+Valid status.
+Revoked/Cancelled status.
+Issue date.
+Relevant non-sensitive information only.
+Verification event logging where enabled.
+Example: AAGAM-CERT-2026-000001. The final public domain and ID format shall be configured during deployment.
+32. Automated Email System
+Event
+Email
+Registration
+OTP
+Registration Complete
+Welcome
+Internship Application
+Application confirmation + Registration Number
+Application Review
+Status/update
+Selection
+Selection/next steps
+Offer Generated
+Offer Letter + Terms & Conditions + CTA
+Payment
+Payment receipt/status
+Offer Accepted
+Acceptance confirmation
+Portal Provisioning
+Secure activation/login instructions
+Orientation
+Orientation notification
+Class
+Class notification
+Assignment
+Assignment notification
+Project Submission
+Submission confirmation
+Project Review
+Review/feedback
+Completion
+Internship/course completion
+LOR
+LOR notification
+Certificate
+Certificate issued notification
+Password Reset
+Secure reset email
+Job Application
+Status notifications where enabled
+32.1 Email Template Engine
+Admin-managed subject/body.
+Template variables.
+Attachment/secure document links.
+Enable/disable.
+Delivery status.
+Failure logs and retry.
+Template versioning.
+Example variables: {{student_name}}, {{registration_no}}, {{internship_name}}, {{offer_id}}, {{amount}}, {{certificate_id}}, {{start_date}}, {{end_date}}.
+33. Notification System
+In-dashboard notifications.
+Email notifications.
+Read/unread state.
+Event-based triggers.
+Notification history.
+Admin configuration.
+34. Staff/HR Dashboard
+Assigned students.
+Application review.
+Document review.
+Internship progress.
+Tasks.
+Project submissions.
+Feedback.
+Communication.
+Completion recommendations.
+Placement/job management according to permission.
+35. Admin Panel
+35.1 Modules
+Dashboard
+Students
+Staff/HR
+Internships
+Training
+Placement
+Job Openings
+Applications
+Documents
+Offer Letters
+LOR
+Certificates
+Template Designer
+Payments
+Email Automation
+Notifications
+Projects
+Blogs/CMS
+Contact Enquiries
+Reports
+Audit Logs
+Settings
+35.2 Admin Dashboard
+Students
+Active Interns
+Applications
+Selected
+Offers
+Offer Accepted
+Payments
+Projects
+Certificates
+Pending Reviews
+36. Admin Offer Letter Generation
+Open selected application.
+Verify application and required documents.
+Select approved template.
+Review dynamic data.
+Generate unique Offer ID.
+Generate PDF and QR.
+Publish to student account.
+Trigger Offer Letter email.
+Enable acceptance action.
+Track acceptance/payment status.
+37. End-to-End Master Workflow
+PUBLIC → INTERNSHIP → SELECT PROGRAM → APPLY → LOGIN/AUTHENTICATION → AUTO-FILL PROFILE → NOC/COLLEGE ID/OTHER REQUIRED DOCUMENTS → COMPLETE DETAILS → EMAIL OTP → FINAL SUBMIT → REGISTRATION NUMBER → CONFIRMATION EMAIL → ADMIN REVIEW → SELECTED → OFFER LETTER GENERATED → OFFER EMAIL + TERMS → ACCEPT OFFER → PROGRAM-SPECIFIC PAYMENT PAGE → RAZORPAY → SERVER-SIDE VERIFICATION → PAYMENT SUCCESS → OFFER ACCEPTED → STUDENT EMAIL → ADMIN PAYMENT/ACCEPTANCE UPDATE → PORTAL PROVISIONING TARGET ≤2 HOURS → SECURE ACTIVATION EMAIL → STUDENT LOGIN → ORIENTATION → INTERNSHIP/TRAINING → PROJECT → REVIEW → COMPLETION → LOR/CERTIFICATE → QR VERIFICATION.
+38. Database Requirements
+Entity
+Purpose
+users
+Authentication/common identity
+students
+Student profile
+staff
+Staff/HR
+roles_permissions
+RBAC
+internships
+Internship programs
+internship_applications
+Internship applications
+program_document_requirements
+Course/program document checklist
+application_documents
+Private NOC/College ID/etc.
+registrations
+Registration numbers
+training_programs
+Training/course
+enrollments
+Course enrollment
+placement_programs
+Placement drives
+jobs
+Job openings
+job_applications
+Job applications
+projects
+Projects
+project_assignments
+Assignments
+project_submissions
+Submissions/reviews
+documents
+Common document registry
+offer_letters
+Offer metadata
+offer_acceptances
+Acceptance records
+lors
+LOR metadata
+certificates
+Certificate metadata
+document_templates
+Template versions
+payments
+Payment records
+payment_events
+Verified gateway webhook/events
+receipts_invoices
+Payment receipts where applicable
+access_provisioning
+Portal activation records
+email_templates
+Email templates
+email_logs
+Email delivery
+notifications
+In-app notifications
+blogs
+CMS
+contacts
+Enquiries
+audit_logs
+Administrative/security audit
+39. Payment Data Model
+Payment must reference the exact application/offer.
+Store amount/currency.
+Razorpay order ID.
+Razorpay payment ID where available.
+Signature/webhook verification result.
+Status history.
+Created/updated timestamps.
+Refund information where applicable.
+Do not store prohibited raw card data.
+40. Security Requirements
+HTTPS in production.
+Secure password hashing.
+Server-side RBAC.
+Protected sessions/tokens.
+Email OTP rate limits.
+Razorpay webhook signature verification.
+Idempotent payment processing.
+Input validation and output encoding.
+SQL/NoSQL injection protection.
+CSRF protection where applicable.
+XSS protection.
+Secure file upload validation.
+Private document storage.
+Access-control checks on every protected resource.
+Audit logs for critical operations.
+Secrets only in secure environment configuration.
+Backup and disaster recovery.
+Admin sensitive actions may require re-authentication/2FA.
+41. Document Security
+Documents must be linked to database records.
+Download endpoints must authorize the current user.
+Public verification must expose only non-sensitive information.
+Revoked documents must show current revoked status.
+Generated PDFs must be immutable/versioned after issuance where practical.
+Replacement/reissue must create an auditable record.
+42. Non-Functional Requirements
+Area
+Requirement
+Responsive
+Mobile, tablet and desktop.
+Performance
+Fast public pages and responsive dashboards under normal load.
+Scalability
+Support growth in students, applications, documents and payments.
+Availability
+Production availability appropriate to hosting/service budget.
+Accessibility
+Readable UI, keyboard support and clear validation.
+Maintainability
+Modular services, documented APIs and reusable components.
+Security
+Secure auth, RBAC, payment verification and document access.
+SEO
+Metadata, sitemap, canonical URLs and clean public URLs.
+Observability
+Application/error/email/payment logs.
+Backup
+Scheduled database and document backups with restore testing.
+43. Recommended Technical Architecture
+Frontend: Next.js/React + responsive design system (e.g., Tailwind CSS).
+Backend: Node.js + Express.js or equivalent API service.
+Database: PostgreSQL or MySQL.
+Authentication: Secure sessions/JWT with email OTP.
+Email: SMTP/provider with verified sender/domain.
+Payments: Razorpay.
+PDF: Server-side PDF/document generation.
+QR: Server-generated QR pointing to verification endpoint.
+Storage: Private object/file storage.
+Deployment: HTTPS-enabled cloud/VPS with monitoring and backups.
+The exact technology stack may change during implementation provided that all SRS requirements remain satisfied.
+44. API Domains
+Auth: register, OTP, login, logout, reset.
+Students: profile, dashboard, documents.
+Internships: listing, detail, application, status.
+Programs: requirements, enrollment.
+Placement/Jobs: openings, applications.
+Projects: assignments, submissions, reviews.
+Offers: generation, view, acceptance.
+Payments: order creation, verification, webhook, history.
+Documents: LOR/certificate generation, download, status.
+Verification: public document lookup.
+Email: templates, triggers, logs.
+Admin: users, programs, CMS, templates, reports, settings.
+45. Audit & Logging
+Application creation/status changes.
+Document generation/revocation.
+Offer acceptance.
+Payment events and verification.
+Portal account provisioning.
+Admin permission changes.
+Email delivery.
+Important login/security events.
+Audit records should include actor, action, target, timestamp and relevant metadata without storing sensitive secrets.
+46. Reporting
+Internship applications by date/program/status.
+Selected/active/completed interns.
+Offer Letter counts.
+Offer acceptance counts.
+Payment totals/statuses.
+Project submission status.
+Certificates issued.
+Placement/job application metrics.
+Email delivery/failure metrics.
+47. Legal & Compliance Considerations
+Terms and fee conditions must be clearly presented before applicable payment.
+Refund/Cancellation Policy must accurately describe the actual business policy.
+Privacy Policy must explain collection and use of student documents and personal data.
+Only necessary personal information should be collected.
+Document verification pages must avoid unnecessary personal information.
+Company must use only accurate, authorized claims, statistics, certificates and employment/internship representations.
+Any paid internship/training/placement service must disclose applicable fees and conditions transparently.
+48. Acceptance Criteria
+Public website contains all agreed navigation sections including Placement.
+Student can register and verify email through OTP.
+Student can log in by password or one-time email OTP.
+Student can select an internship and click Apply.
+Application displays program-specific document requirements.
+NOC and College ID can be uploaded where configured.
+Existing student data is auto-filled.
+Student can manually correct/complete missing details.
+Application-time email OTP is required before final submission.
+Successful submission generates a unique Registration Number.
+Student receives application confirmation email.
+Admin sees the application in the dashboard.
+Admin can review/select/reject the application.
+Admin can generate an Offer Letter from an approved template.
+Offer Letter email includes applicable Terms & Conditions and acceptance action.
+Accept Offer leads to the correct authenticated student's payment flow.
+Payment amount/order is created server-side for the exact offer/application.
+Razorpay payment is verified server-side.
+Successful payment updates both student and admin records.
+Student sees Payment History.
+Admin sees Payment Management/History.
+Successful payment triggers Offer Accepted state.
+Portal provisioning starts automatically after verified payment.
+Target provisioning is within 2 hours, with exception/pending monitoring.
+Student receives secure activation/login instructions.
+Student can access internship portal after activation.
+Project submission/review works.
+Admin can generate LOR and Certificate.
+Documents receive unique IDs and QR verification.
+Public verification reflects Valid/Revoked/Cancelled status.
+Automated emails are sent for configured lifecycle events.
+Unauthorized users cannot access another student's data or payments.
+49. Future Enhancements
+Advanced LMS/video progress.
+Attendance automation.
+Interview scheduling.
+WhatsApp notifications through approved provider.
+Advanced analytics.
+Alumni portal.
+Referral system.
+Digital signatures/e-signatures.
+Mobile apps.
+Automated certificate reissue workflows.
+50. Company Information
+Field
+Value
+Company
+AAGAM Digital Technology
+CEO
+Ayush Raj
+HR
+Akash Verma
+HR Phone
+9693335499
+HR Email
+akashvermaofficialblogs@gmail.com
+Company Email
+AAGAMDigitaltech@gmail.com
+Contact
+7667204026
+Contact
+9142363927
+Contact
+7091465676
+51. Final Product Vision
+AAGAM Digital Technology shall operate a single integrated platform in which public visitors discover internships, training and placement opportunities; students complete a verified application journey; Admin/HR teams review and manage candidates; authorized administrators generate official documents; students accept offers and make applicable payments through a secure Razorpay workflow; verified payment automatically triggers portal provisioning; and the entire internship lifecycle is managed digitally through the student and staff dashboards.
+The platform shall prioritize transparency, security, auditability and automation. Official Offer Letters, LORs and Certificates must be generated only through authorized workflows and verified against server-side records. Payment success must be based on gateway verification rather than frontend claims, and student credentials should be delivered through secure activation mechanisms.

@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220" width="320" height="220">
+  <defs>
+    <!-- Radial & Linear Gradients for Globe -->
+    <radialGradient id="iafGlobeGrad" cx="45%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#4B9FE1"/>
+      <stop offset="45%" stop-color="#1B6CB0"/>
+      <stop offset="85%" stop-color="#0F4C82"/>
+      <stop offset="100%" stop-color="#093158"/>
+    </radialGradient>
+    <linearGradient id="iafBorderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E70B8"/>
+      <stop offset="100%" stop-color="#0B3766"/>
+    </linearGradient>
+    <!-- Paths for Curved Text -->
+    <path id="topArc" d="M 40,110 A 120,85 0 0,1 280,110" fill="none" />
+    <path id="bottomArc" d="M 285,110 A 125,90 0 0,1 35,110" fill="none" />
+  </defs>
+
+  <!-- Outer Elliptical Container -->
+  <g transform="translate(160, 110)">
+    <!-- Outer Deep Blue Ellipse Rim -->
+    <ellipse cx="0" cy="0" rx="146" ry="98" fill="url(#iafBorderGrad)" stroke="#FFFFFF" stroke-width="2.5" />
+    <ellipse cx="0" cy="0" rx="138" ry="90" fill="none" stroke="#FFFFFF" stroke-width="1.5" />
+
+    <!-- Inner Globe Ellipse -->
+    <ellipse cx="0" cy="0" rx="114" ry="74" fill="url(#iafGlobeGrad)" stroke="#FFFFFF" stroke-width="2" />
+
+    <!-- Globe Grid Lines (Latitudes) -->
+    <path d="M -114,0 Q 0,-32 114,0" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.65" />
+    <path d="M -114,0 Q 0,32 114,0" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.65" />
+    <path d="M -102,-32 Q 0,-52 102,-32" fill="none" stroke="#FFFFFF" stroke-width="0.85" opacity="0.55" />
+    <path d="M -102,32 Q 0,52 102,32" fill="none" stroke="#FFFFFF" stroke-width="0.85" opacity="0.55" />
+
+    <!-- Globe Grid Lines (Longitudes) -->
+    <path d="M 0,-74 L 0,74" fill="none" stroke="#FFFFFF" stroke-width="1" opacity="0.65" />
+    <path d="M 0,-74 Q -48,0 0,74" fill="none" stroke="#FFFFFF" stroke-width="0.85" opacity="0.55" />
+    <path d="M 0,-74 Q 48,0 0,74" fill="none" stroke="#FFFFFF" stroke-width="0.85" opacity="0.55" />
+    <path d="M 0,-74 Q -85,0 0,74" fill="none" stroke="#FFFFFF" stroke-width="0.75" opacity="0.45" />
+    <path d="M 0,-74 Q 85,0 0,74" fill="none" stroke="#FFFFFF" stroke-width="0.75" opacity="0.45" />
+
+    <!-- Bold White "IAF" Letters across center -->
+    <text x="0" y="22" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="64" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="3" style="filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.45));">
+      IAF
+    </text>
+  </g>
+
+  <!-- Upper Banner Text: MEMBER OF MULTILATERAL -->
+  <text font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="11" font-weight="900" fill="#FFFFFF" letter-spacing="1.2">
+    <textPath href="#topArc" startOffset="50%" text-anchor="middle">
+      MEMBER OF MULTILATERAL
+    </textPath>
+  </text>
+
+  <!-- Lower Banner Text: RECOGNITION ARRANGEMENT -->
+  <text font-family="'Plus Jakarta Sans', Arial, sans-serif" font-size="10.5" font-weight="900" fill="#FFFFFF" letter-spacing="1">
+    <textPath href="#bottomArc" startOffset="50%" text-anchor="middle">
+      RECOGNITION ARRANGEMENT
+    </textPath>
+  </text>
+</svg>

@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "buildCommand": "npm run build",
+  "outputDirectory": "client/dist",
+  "functions": {
+    "api/index.ts": {
+      "includeFiles": [
+        "server/data/**",
+        "documents/assets/**",
+        "client/public/**"
+      ],
+      "maxDuration": 60
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/uploads/(.*)",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/documents/(.*)",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "/api/index.ts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
