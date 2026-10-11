@@ -72,7 +72,7 @@ npm run dev
 
 | Role | Name | Email | Password | Access / Notes |
 |---|---|---|---|---|
-| **Admin (CEO)** | Ayush Raj | `admin@aagam.com` | `Admin@123` | Full Admin ERP, Offer Generation, Certificate Issuance, Payments, Email Automation, System Settings |
+| **Admin (CEO)** | Ayush Raj | `brightspark772@gmail.com` | `BrightSpark@772` | Full Admin ERP, Offer Generation, Certificate Issuance, Payments, Email Automation, System Settings |
 | **Staff (HR)** | Akash Verma | `akashvermaofficialblogs@gmail.com` | `Staff@123` | HR & Staff Portal, Application Reviews, NOC Verification, Project Submissions Review |
 | **Student** | Rohan Sharma | `student@aagam.com` | `Student@123` | Student Portal, Application `AAGAM-INT-2026-000001`, Active Offer, Project Submissions, Document Downloads |
 

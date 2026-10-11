@@ -57,10 +57,10 @@ export function resetAndSeedDatabase(force = false) {
   db.pragma('foreign_keys = ON');
 
   const now = new Date().toISOString();
-  const passwordHashAdmin = bcrypt.hashSync('Admin@123456', 10);
+  const passwordHashAdmin = bcrypt.hashSync('BrightSpark@772', 10);
   const passwordHashStaff = bcrypt.hashSync('Staff@123456', 10);
 
-  // 1. Seed Authorized Admin: ramji.patel8002@gmail.com
+  // 1. Seed Authorized Admin: brightspark772@gmail.com
   const adminId = uuidv4();
   const staffId = uuidv4();
 
@@ -71,7 +71,7 @@ export function resetAndSeedDatabase(force = false) {
 
   insertUser.run(
     adminId,
-    'ramji.patel8002@gmail.com',
+    'brightspark772@gmail.com',
     passwordHashAdmin,
     'admin',
     'Ayush Raj (CEO & Administrator)',
@@ -501,11 +501,11 @@ export function resetAndSeedDatabase(force = false) {
   insertSetting.run('ceo_name', 'Ayush Raj', 'leadership', now);
   insertSetting.run('hr_head_name', 'Akash Verma', 'leadership', now);
   insertSetting.run('support_email', 'support@aagamdigitaltech.com', 'contact', now);
-  insertSetting.run('admin_email', 'ramji.patel8002@gmail.com', 'security', now);
+  insertSetting.run('admin_email', 'brightspark772@gmail.com', 'security', now);
   insertSetting.run('portal_url', 'http://127.0.0.1:5173', 'system', now);
 
   console.log('[SEED] Baseline initialization complete. Pristine zero-data state established!');
-  console.log('[SEED] Master Admin: ramji.patel8002@gmail.com | Password: Admin@123456');
+  console.log('[SEED] Master Admin: brightspark772@gmail.com | Password: BrightSpark@772');
 }
 
 export function seedDatabase() {

@@ -22,8 +22,8 @@ interface AdminLoginPageProps {
 
 export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ setCurrentView }) => {
   const { user, setUser, toast, isAuthenticated, isLoading } = useAuth();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('brightspark772@gmail.com');
+  const [password, setPassword] = useState('BrightSpark@772');
   const [otp, setOtp] = useState('');
   const [step, setStep] = useState<'credentials' | 'otp'>('credentials');
   const [loading, setLoading] = useState(false);
@@ -148,6 +148,18 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ setCurrentView }
           {step === 'credentials' ? (
             /* Step 1: Email & Password */
             <form onSubmit={handleInitiate2FA} className="space-y-4">
+              <div className="p-3 bg-slate-950/70 border border-slate-800 rounded-2xl flex items-center justify-between text-xs text-slate-300">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-[11px] text-slate-300">
+                    Admin Portal: <strong className="text-white font-mono">brightspark772@gmail.com</strong>
+                  </span>
+                </div>
+                <span className="text-[10px] px-2 py-0.5 rounded-full bg-rose-500/10 text-rose-300 border border-rose-500/20 font-medium font-mono">
+                  2FA Active
+                </span>
+              </div>
+
               <div>
                 <label className="block text-xs font-semibold text-slate-300 uppercase tracking-wider mb-1.5">
                   Administrative Email Address
@@ -161,7 +173,7 @@ export const AdminLoginPage: React.FC<AdminLoginPageProps> = ({ setCurrentView }
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="ramji.patel8002@gmail.com"
+                    placeholder="brightspark772@gmail.com"
                     className="w-full pl-10 pr-4 py-3 bg-slate-950 border border-slate-700/80 rounded-xl text-white placeholder-slate-500 text-sm focus:outline-none focus:border-rose-500 focus:ring-1 focus:ring-rose-500 transition-all font-mono"
                   />
                 </div>
