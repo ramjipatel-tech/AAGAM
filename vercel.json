@@ -4,11 +4,7 @@
   "outputDirectory": "client/dist",
   "functions": {
     "api/index.ts": {
-      "includeFiles": [
-        "server/data/**",
-        "documents/assets/**",
-        "client/public/**"
-      ],
+      "includeFiles": "{server/data/**,documents/assets/**,client/public/**}",
       "maxDuration": 60
     }
   },

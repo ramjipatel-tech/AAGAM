@@ -34,3 +34,5 @@ scratch/
 test*.ts
 test*.js
 .playwright-mcp/
+
+.vercel
