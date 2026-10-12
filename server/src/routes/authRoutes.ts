@@ -1,9 +1,10 @@
 import express, { Request, Response } from 'express';
+import { randomInt } from 'crypto';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { v4 as uuidv4 } from 'uuid';
 import { db } from '../db/database';
-import { JWT_SECRET } from '../config';
+import { JWT_SECRET, CLIENT_URL } from '../config';
 import { authenticateToken, AuthenticatedUser } from '../middleware/auth';
 import { sendAutomatedEmail } from '../services/emailService';
 import { recordAuditLog } from '../services/auditService';
@@ -12,7 +13,7 @@ export const authRouter = express.Router();
 
 // Helper to generate 6-digit numeric OTP
 function generateOtp(): string {
-  return Math.floor(100000 + Math.random() * 900000).toString();
+  return randomInt(100000, 1000000).toString();
 }
 
 // 1. POST /api/auth/register
@@ -521,7 +522,7 @@ authRouter.post('/otp-login-request', async (req: Request, res: Response) => {
     res.json({
       success: true,
       message: `Login verification code dispatched to ${normalizedEmail}.`,
-      devOtp: otp,
+      devOtp: process.env.NODE_ENV !== 'production' ? otp : undefined,
       expiresInMinutes: 10,
     });
   } catch (error: any) {
@@ -638,7 +639,7 @@ authRouter.post('/forgot-password', async (req: Request, res: Response) => {
       VALUES (?, ?, ?, ?, ?, ?, 0, ?)
     `).run(tokenId, user.id, normalizedEmail, resetToken, resetOtp, expiresAt, now);
 
-    const resetUrl = `http://127.0.0.1:5173/?view=reset-password&token=${resetToken}`;
+    const resetUrl = `${CLIENT_URL}/?view=reset-password&token=${resetToken}`;
 
     await sendAutomatedEmail({
       to: normalizedEmail,
@@ -659,7 +660,7 @@ authRouter.post('/forgot-password', async (req: Request, res: Response) => {
     res.json({
       success: true,
       message: 'Password reset link and OTP dispatched to your registered email address (valid for 1 hour).',
-      devOtp: resetOtp,
+      devOtp: process.env.NODE_ENV !== 'production' ? resetOtp : undefined,
       resetUrl,
     });
   } catch (error: any) {
@@ -721,7 +722,7 @@ authRouter.post('/reset-password', async (req: Request, res: Response) => {
       variables: {
         student_name: user.full_name,
         email: user.email,
-        login_url: 'http://127.0.0.1:5173/?view=student-login',
+        login_url: `${CLIENT_URL}/?view=student-login`,
       },
       userId: resetRecord.user_id,
       notificationTitle: 'Password Updated Successfully',
