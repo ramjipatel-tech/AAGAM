@@ -176,12 +176,16 @@ export async function sendAutomatedEmail(payload: EmailPayload): Promise<{ succe
       }
     }
 
+    if (!smtpSuccess) {
+      throw new Error(smtpErrorMessage || (!mailTransporter ? 'SMTP is not configured; email was not sent.' : 'Email recipient is missing.'));
+    }
+
     // 4. Log to database email_logs with valid check status ('Sent', 'Failed', 'Queued')
     const insertLog = db.prepare(`
       INSERT INTO email_logs (id, recipient, template_key, subject, body_preview, status, error_message, related_id, sent_at)
       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
     `);
-    const finalStatus = smtpSuccess ? 'Sent' : smtpErrorMessage ? 'Queued' : 'Sent';
+    const finalStatus = smtpSuccess ? 'Sent' : 'Failed';
     insertLog.run(
       logId,
       payload.to,
@@ -221,7 +225,7 @@ export async function sendAutomatedEmail(payload: EmailPayload): Promise<{ succe
     `);
     insertFailed.run(logId, payload.to, payload.templateKey, err.message, payload.relatedId || null, now);
 
-    return { success: false, logId, subject: '', body: '' };
+    throw new Error('Email delivery failed. Check SMTP configuration and server logs.');
   }
 }
 
